@@ -1,0 +1,77 @@
+TRAIN_DATA = [
+    ("John Doe's email is john.doe@example.com", {"entities": [(0, 8, "PERSON"), (22, 40, "EMAIL")]}),
+    ("Call me at (123) 456-7890", {"entities": [(11, 25, "PHONE_NUMBER")]}),
+    ("Name: Chemukula Thulasi Sandeep, Phone Number: 9876543210", {"entities": [(6, 11, "PERSON"), (26, 36, "PHONE_NUMBER")]}),
+    ("Ph no: 1234567890, Name: Bob", {"entities": [(6, 16, "PHONE_NUMBER"), (24, 27, "PERSON")]}),
+    ("Contact me at bob@example.com or (555) 123-4567", {"entities": [(13, 29, "EMAIL"), (33, 47, "PHONE_NUMBER")]}),
+    ("Sriram's number is 9876543210", {"entities": [(0, 6, "PERSON"), (20, 30, "PHONE_NUMBER")]}),
+
+    # Indian names and numbers
+    ("Name: DEPENDENT PASS, Phone Number: 9876543210", {"entities": [(6, 11, "PERSON"), (26, 36, "PHONE_NUMBER")]}),
+    ("Contact: Priya Sharma, Ph no: 9876543210", {"entities": [(10, 22, "PERSON"), (34, 44, "PHONE_NUMBER")]}),
+    ("Ravi Kumar's email: ravi.kumar@domain.in", {"entities": [(0, 10, "PERSON"), (17, 35, "EMAIL")]}),
+    ("Reach out to Ananya at ananya@example.in or call 1234567890",
+     {"entities": [(12, 18, "PERSON"), (22, 40, "EMAIL"), (46, 56, "PHONE_NUMBER")]}),
+    ("Nikhil's number: 9876543210, Name: Sneha",
+     {"entities": [(0, 6, "PERSON"), (17, 27, "PHONE_NUMBER"), (31, 36, "PERSON")]}),
+    ("Ravi Singh, phone: 8765432109", {"entities": [(0, 10, "PERSON"), (14, 24, "PHONE_NUMBER")]}),
+    ("Name: AMINA TAHA ASHKAH AL-AZZAWI, Ph No: 9999999999", {"entities": [(6, 16, "PERSON"), (22, 32, "PHONE_NUMBER")]}),
+    ("Mr. Rajesh Kumar's contact: 8888888888", {"entities": [(4, 15, "PERSON"), (22, 32, "PHONE_NUMBER")]}),
+    ("Name: Sanjay Patel, Phone Number: 9876543210", {"entities": [(6, 16, "PERSON"), (31, 41, "PHONE_NUMBER")]}),
+    ("Email: amit@xyz.in, Contact: Rina Sharma, Ph no: 8888888888",
+     {"entities": [(6, 19, "EMAIL"), (26, 36, "PERSON"), (42, 52, "PHONE_NUMBER")]}),
+
+    # More Indian names and numbers
+    ("Name: Aarav Patel, Phone Number: 9876543210", {"entities": [(6, 16, "PERSON"), (31, 41, "PHONE_NUMBER")]}),
+    ("Contact person: Meera Singh, Phone No: 9123456789", {"entities": [(16, 26, "PERSON"), (32, 42, "PHONE_NUMBER")]}),
+    ("Raj Kumar's email: raj.kumar@abc.com", {"entities": [(0, 10, "PERSON"), (17, 34, "EMAIL")]}),
+    ("Ritika, phone: 8777665544", {"entities": [(0, 6, "PERSON"), (13, 23, "PHONE_NUMBER")]}),
+    ("Phone Number: 9998887777, Name: Vikas", {"entities": [(14, 24, "PHONE_NUMBER"), (30, 35, "PERSON")]}),
+    ("Name: Divya Singh, Phone Number: 7654321098", {"entities": [(6, 16, "PERSON"), (31, 41, "PHONE_NUMBER")]}),
+    ("Contact: Ashok Kumar, Phone: 9823456789", {"entities": [(9, 19, "PERSON"), (26, 36, "PHONE_NUMBER")]}),
+    ("Mr. Sumit Sharma, Phone No: 9999999999", {"entities": [(3, 14, "PERSON"), (22, 32, "PHONE_NUMBER")]}),
+    ("Email: priyanka@gmail.com, Contact: Alok, Ph no: 9765432109",
+     {"entities": [(6, 25, "EMAIL"), (33, 37, "PERSON"), (42, 52, "PHONE_NUMBER")]}),
+    ("Phone Number: 8887776666, Name: Kiran", {"entities": [(14, 24, "PHONE_NUMBER"), (30, 35, "PERSON")]}),
+
+    # Adding more Indian examples
+    ("Name: Rahul, Phone Number: 9876543210", {"entities": [(6, 11, "PERSON"), (26, 36, "PHONE_NUMBER")]}),
+    ("Rajesh's contact: 9823456789", {"entities": [(0, 6, "PERSON"), (15, 25, "PHONE_NUMBER")]}),
+    ("Sonia Patel, Phone: 9998887777", {"entities": [(0, 11, "PERSON"), (18, 28, "PHONE_NUMBER")]}),
+    ("Contact: Deepak Sharma, Phone No: 8889997777", {"entities": [(9, 21, "PERSON"), (27, 37, "PHONE_NUMBER")]}),
+    ("Name: Priyanka, Phone Number: 9876543210", {"entities": [(6, 15, "PERSON"), (30, 40, "PHONE_NUMBER")]}),
+    ("Mr. Anil Kumar, Phone No: 9999999999", {"entities": [(3, 13, "PERSON"), (21, 31, "PHONE_NUMBER")]}),
+    ("Shivani's phone number is 8765432109", {"entities": [(0, 8, "PERSON"), (24, 34, "PHONE_NUMBER")]}),
+    ("Name: Neha, Ph No: 9900112233", {"entities": [(6, 10, "PERSON"), (15, 25, "PHONE_NUMBER")]}),
+    ("Contact person: Alok, Phone: 9999999999", {"entities": [(15, 19, "PERSON"), (26, 36, "PHONE_NUMBER")]}),
+    ("Name: Priyanka, Phone Number: 9998887777", {"entities": [(6, 15, "PERSON"), (30, 40, "PHONE_NUMBER")]}),
+
+    # Adding further examples
+    ("Phone: 1234567890, Name: Neelam", {"entities": [(0, 10, "PHONE_NUMBER"), (15, 20, "PERSON")]}),
+    ("Name: Vikram Singh, Ph no: 9997778888", {"entities": [(6, 17, "PERSON"), (22, 32, "PHONE_NUMBER")]}),
+    ("Email: rakesh@domain.co.in, Contact: Sunita, Phone Number: 9823456789",
+     {"entities": [(6, 27, "EMAIL"), (36, 42, "PERSON"), (48, 58, "PHONE_NUMBER")]}),
+    ("Sumit Sharma's phone number is 9712345678", {"entities": [(0, 11, "PERSON"), (27, 37, "PHONE_NUMBER")]}),
+    ("Name: Aarav, Phone Number: 9112233445", {"entities": [(6, 11, "PERSON"), (26, 36, "PHONE_NUMBER")]}),
+    ("Contact: Anju, Ph no: 9991112222", {"entities": [(9, 13, "PERSON"), (19, 29, "PHONE_NUMBER")]}),
+    ("Name: Manish, Phone Number: 8887776666", {"entities": [(6, 12, "PERSON"), (27, 37, "PHONE_NUMBER")]}),
+    ("Mr. Rajiv Kumar, Phone No: 9911223344", {"entities": [(3, 13, "PERSON"), (22, 32, "PHONE_NUMBER")]}),
+    ("Phone Number: 9812345678, Name: Riya", {"entities": [(14, 24, "PHONE_NUMBER"), (30, 34, "PERSON")]}),
+    ("Name: Ramesh, Contact: 9998887777", {"entities": [(6, 12, "PERSON"), (21, 31, "PHONE_NUMBER")]}),
+    ("Email: jaya@example.in, Name: Priya, Phone Number: 9000112233",
+     {"entities": [(6, 22, "EMAIL"), (24, 29, "PERSON"), (35, 45, "PHONE_NUMBER")]}),
+
+    # Adding even more examples
+    ("Phone No: 9700012345, Name: Sandeep", {"entities": [(9, 19, "PHONE_NUMBER"), (25, 31, "PERSON")]}),
+    ("Contact Person: Aman, Phone Number: 9556778899", {"entities": [(15, 19, "PERSON"), (30, 40, "PHONE_NUMBER")]}),
+    ("Name: Clark Carson, Phone Number: 9823456789", {"entities": [(6, 11, "PERSON"), (26, 36, "PHONE_NUMBER")]}),
+    ("Contact: Sunil, Ph No: 9911223344", {"entities": [(9, 14, "PERSON"), (19, 29, "PHONE_NUMBER")]}),
+    ("Mr. Arjun's email is arjun@example.in", {"entities": [(3, 8, "PERSON"), (16, 33, "EMAIL")]}),
+    ("Name: SRIRAM, Phone Number: 9865432109", {"entities": [(6, 11, "PERSON"), (26, 36, "PHONE_NUMBER")]}),
+    ("Ravi's contact number: 9999999999", {"entities": [(0, 4, "PERSON"), (21, 31, "PHONE_NUMBER")]}),
+    ("Phone Number: 9777888999, Name: Lata", {"entities": [(14, 24, "PHONE_NUMBER"), (30, 34, "PERSON")]}),
+    ("Name: GITA, Phone: 9911223344", {"entities": [(6, 11, "PERSON"), (17, 27, "PHONE_NUMBER")]}),
+    ("Contact: Raj, Phone No: 9823456789", {"entities": [(9, 12, "PERSON"), (19, 29, "PHONE_NUMBER")]}),
+]
+
+# COPYRIGHTS Kotipalli Srikesh RA221003010979 SRMIST
